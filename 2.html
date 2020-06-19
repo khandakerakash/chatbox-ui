@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Chatbot for the website">
+    <meta name="keywords" content="Chatbot, Chatbox, Messaging, Chating">
+    <meta name="author" content="Biswanath Ghosh Tapos">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Fevicon-->
+    <link rel="shortcut icon" type="image/png" href="fevicon.png"/>
+    <!--Google Roboto Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <!--Icomoon -->
+    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/1929c47db7/UntitledProject/style.css">
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/chatbox.css">
+    <title>Chatbox | Tutexp Software</title>
+</head>
+
+<body>
+    <div id="closeChatBox" class="chatbox-wrap">
+        <div class="chatbox-outer">
+            <div class="header top-radious padding-both-side">
+                <h1 class="header-title">Ask us anything</h1>
+                <div class="minimize-maximize">
+                    <span class="icon-arrow-up-right m-r-1"></span>
+                    <span class="icon-minus" onclick="onMinimizeChatBox()"></span>
+                </div>
+            </div>
+
+            <div id="chatboxInner" class="chatbox-inner top-radious">
+                <div class="live-support-wrap padding-both-side">
+                    <div class="live-support-area">
+                        <img class="live-support-icon" src="assets/icons/live-support.svg" alt="Live Support Icon" height="35" width="35" />
+                        <div class="live-support-text">
+                            <h2>Live Support</h2>
+                            <h4>Customer Support</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content padding-both-side">
+                    <div class="customer-msg-wrap">
+                        <div class="customer-msg-inner">
+                            <div class="seen-icon m-r-1">
+                                <span class="icon-check"></span>
+                            </div>
+                            <div class="customer-msg">
+                                <p>Hello.</p>
+                            </div>
+                        </div>
+                        <p class="text-muted m-b-0 seen-time text-right">09:20am</p>
+                    </div>
+
+                    <div class="support-msg-wrap">
+                        <span class="chat-started">Chat started</span>
+                        <span class="queue-position">Queue position: 1</span>
+                    </div>
+                </div>
+
+                <div class="messaging-area">
+                    <div class="input-area">
+                        <textarea type="text" id="messaging" class="input-control" placeholder="Type a message here.." rows="3"></textarea>
+                    </div>
+
+                    <div class="action-area float-right">
+                        <span class="logout-icon icon-log-out"></span>
+                        <span class="more-icon icon-more-horizontal"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        function onMinimizeChatBox() {
+          var x = document.getElementById("chatboxInner");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+
+        function onLogout() {
+            var x = document.getElementById("cancelChatDialog");
+            x.style.display = "block";
+
+            var y = document.getElementById("messagingArea");
+            y.style.display = "none";
+        }
+
+        function onCancel() {
+            var x = document.getElementById("cancelChatDialog");
+            x.style.display = "none";
+
+            var y = document.getElementById("messagingArea");
+            y.style.display = "block";
+        }
+
+        function onEnd() {
+            var a = document.getElementById("likeDislikeWrap");
+            a.style.display = "none";
+
+            var x = document.getElementById("contentInner");
+            x.style.display = "none";
+
+            var y = document.getElementById("cancelChatDialog");
+            y.style.display = "none";
+
+            var z = document.getElementById("messagingArea");
+            z.style.display = "none";
+
+            var o = document.getElementById("afterEndBtnClick");
+            o.style.display = "block";
+        }
+
+        function onChatEnd() {
+            var e = document.getElementById("chatEnded");
+            e.style.display = "block";
+
+            var f = document.getElementById("afterEndBtnClick");
+            f.style.display = "none";
+
+            var a = document.getElementById("likeDislikeWrap");
+            a.style.display = "none";
+
+            var x = document.getElementById("contentInner");
+            x.style.display = "block";
+
+            var y = document.getElementById("cancelChatDialog");
+            y.style.display = "none";
+
+            var z = document.getElementById("messagingArea");
+            z.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
